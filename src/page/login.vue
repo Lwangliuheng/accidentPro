@@ -793,7 +793,7 @@
          var zarr = ["正前部","左前部","右前部","左中部","正后部","左后部","右后部","右中部"];
          var barr = [];
          for(var i = 0; i < arr.length;i++){
-            barr.push(zarr[arr[i]])
+            barr.push(zarr[arr[i]-1])
          };
          return barr
       },
@@ -833,7 +833,7 @@
               // this.agreeThird = 3 ;
               this.agreeThird = response.data.duty.type;
               this.dutyType = dutyType[response.data.duty.dutyType];
-              if(!this.lossState){
+              if(this.lossState){
                 this.changeLossList(response.data.duty.claimInfo);
               }
               
