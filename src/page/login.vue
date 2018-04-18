@@ -634,7 +634,7 @@
                   <img style="height:30px;width: 30px;" class="img flex" src="../images/greenCircle.png"/>
               </div>
               <div class="secondLineText flex-1">
-                  <span>三者车辆（{{targetVehicle.licenseNo}}）已确认收到保险车辆（{{plateNumber}}）赔偿款（{{claimMoney}}）元，并承诺后期不在追究对方及对方保险公司的赔偿责任。</span>
+                  <span>三者车辆（{{plateNumber}}）已确认收到保险车辆（{{targetVehicle.licenseNo}}）赔偿款（{{claimMoney}}）元，并承诺后期不在追究对方及对方保险公司的赔偿责任。</span>
               </div>
           </div>
           <div class="signShowBox">
@@ -813,9 +813,9 @@
       getDetailData(){
         var surveyNo = this.$route.params.num
         var paramData = {
-          'num': '6e5798ddd1804baa9f372d2541bbd4c2'
+          'num': surveyNo
         }
-        this.$store.commit('setSurveyNoActive','6e5798ddd1804baa9f372d2541bbd4c2');
+        this.$store.commit('setSurveyNoActive',surveyNo);
         axios.post(this.ajaxUrl+"/survey_single/v1/query",paramData)
           .then(response => {
             console.log(response,77777777777777)
